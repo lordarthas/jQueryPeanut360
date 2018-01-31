@@ -14,6 +14,14 @@ These are the key points behind this plugin:
  - It doesn't force you to use any provided UI or button, you just use your own
  - It just needs jQuery to work
 
-## TODO
+## ToDo
 
  - Handle mobile swipe events to turn slides
+
+## License
+
+MIT License
+
+## Copyright
+
+Copyright (c) 2018 Michele Beltrame - mb@italpro.net
