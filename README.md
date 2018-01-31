@@ -12,7 +12,7 @@ These are the key points behind this plugin:
  - It doesn't modify the DOM
  - It doesn't care if you wrap one or more of your images in another tag (such as and <a> to view a zoom)
  - It doesn't force you to use any provided UI or button, you just use your own
- - It doesn't even care if they are <img> tags, you can use whatever you want
+ - It doesn't even care if elements are are images, you can use whatever you want
  - It just needs jQuery to work
 
 ## Usage
