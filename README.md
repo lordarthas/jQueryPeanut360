@@ -32,17 +32,35 @@ This demo uses Bootstrap 4 classes, but you can use whatever you want.
   <img src="3.jpg" class="p360slide img-fluid d-none">
 </div>
 
+<div class="col-12 text-center">
+  <input id="prev_button" type="button" class="btn btn-default" value="&laquo;">
+  <input id="start_button" type="button" class="btn btn-primary" value="Start">
+  <input id="start_reverse_button" type="button" class="btn btn-primary" value="Start (reverse)">
+  <input id="stop_button" type="button" class="btn btn-warning" value="Stop">
+  <input id="next_button" type="button" class="btn btn-default" value="&raquo;">
+</div>
+
 <script type="text/javascript" src="jquery.peanut360.js"></script>
 <script type="text/javascript">
 $(function() {
     // Initialize with no params if you use "d-none" as class for hiding
-    $("#maserin360").peanut360();
+    $("#demo360").peanut360();
 
-    $("#start_button").on("click", function() { $("#maserin360").peanut360("animate") });
-    $("#start_reverse_button").on("click", function() { $("#maserin360").peanut360("animate_reverse") });
-    $("#stop_button").on("click", function() { $("#maserin360").peanut360("animate_stop") });
-    $("#prev_button").on("click", function() { $("#maserin360").peanut360("showprevious") });
-    $("#next_button").on("click", function() { $("#maserin360").peanut360("shownext") });
+    // !! Bind buttons to actions //
+    // Start animation
+    $("#start_button").on("click", function() { $("#demo360").peanut360("animate") });
+    // Start animation (in reverse)
+    $("#start_reverse_button").on("click", function() { $("#demo360").peanut360("animate_reverse") });
+    // Stop animation
+    $("#stop_button").on("click", function() { $("#demo360").peanut360("animate_stop") });
+    // Go to previous slide
+    $("#prev_button").on("click", function() { $("#demo360").peanut360("showprevious") });
+    // Go to next slide
+    $("#next_button").on("click", function() { $("#demo360").peanut360("shownext") });
+
+    // Just autostart it page loading if you wish
+    // TODO: only do that when we're sure images are loaded
+    $("#demo360").peanut360("animate");
 })
 </script>
 ```
