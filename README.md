@@ -20,6 +20,7 @@ These are the key points behind this plugin:
 
 This demo uses Bootstrap 4 classes, but you can use whatever you want.
 
+    ```html
     <!-- Set all images as hidden with a class (d-none in this example)
          except the one you want to start with -->
     <div id="demo360" class="col-12">
@@ -44,6 +45,7 @@ This demo uses Bootstrap 4 classes, but you can use whatever you want.
         $("#next_button").on("click", function() { $("#maserin360").peanut360("shownext") });
     })
     </script>
+    ```
 
 ## ToDo
 
