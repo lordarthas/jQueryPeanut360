@@ -14,6 +14,37 @@ These are the key points behind this plugin:
  - It doesn't force you to use any provided UI or button, you just use your own
  - It just needs jQuery to work
 
+## Usage
+
+### DWIM
+
+This demo uses Bootstrap 4 classes, but you can use whatever you want.
+
+    <!-- Set all images as hidden with a class (d-none in this example)
+         except the one you want to start with -->
+    <div id="demo360" class="col-12">
+      <!-- Add the class p360slide to your images -->
+      <img src="1.jpg" class="p360slide img-fluid d-none">
+      <a download href="2.jpg"><!-- We don't care about other tags, they just work -->
+        <img src="2.jpg" class="p360slide img-fluid d-none">
+      </a>
+      <img src="3.jpg" class="p360slide img-fluid d-none">
+    </div>
+
+    <script type="text/javascript" src="jquery.peanut360.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        // Initialize with no params if you use "d-none" as class for hiding
+        $("#maserin360").peanut360();
+
+        $("#start_button").on("click", function() { $("#maserin360").peanut360("animate") });
+        $("#start_reverse_button").on("click", function() { $("#maserin360").peanut360("animate_reverse") });
+        $("#stop_button").on("click", function() { $("#maserin360").peanut360("animate_stop") });
+        $("#prev_button").on("click", function() { $("#maserin360").peanut360("showprevious") });
+        $("#next_button").on("click", function() { $("#maserin360").peanut360("shownext") });
+    })
+    </script>
+
 ## ToDo
 
  - Handle mobile swipe events to turn slides
