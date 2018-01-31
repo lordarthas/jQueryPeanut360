@@ -6,9 +6,11 @@
 (function ( $ ) {
     "use strict";
     function Peanut360(args) {
+        if ( args.hideclass ) { this.hideclass = args.hideclass; }
+        if ( args.interval ) { this.interval = args.interval; }
         this.$node = args.$node;
         this.$slides = this.$node.find(".p360slide");
-        var $currentslide = this.$node.find(".p360slide:not(.d-none)");
+        var $currentslide = this.$node.find(".p360slide:not(." +  this.hideclass + ")");
         this.csidx = this.$slides.index($currentslide);
         this.lsidx = this.$slides.length - 1;
 
@@ -22,6 +24,7 @@
     }
 
     Peanut360.prototype = {
+        hideclass       : 'd-none',
         $node           : null,
         // We need an array of the slides because we need to cycle between
         // them regardless if they're wrapped individually in <a> or other tags
@@ -50,17 +53,17 @@
         },
 
         shownext : function() {
-          $( (this.$slides)[this.csidx] ).addClass("d-none");
+          $( (this.$slides)[this.csidx] ).addClass(this.hideclass);
           this.csidx = (this.csidx < this.lsidx) ? this.csidx+1 : 0;
           var $nextslide = $( this.$slides[this.csidx] );
-          $nextslide.removeClass("d-none");
+          $nextslide.removeClass(this.hideclass);
         },
 
         showprevious : function() {
-          $( (this.$slides)[this.csidx] ).addClass("d-none");
+          $( (this.$slides)[this.csidx] ).addClass(this.hideclass);
           this.csidx = (this.csidx > 0) ? this.csidx-1 : this.lsidx;
           var $prevslide = $( this.$slides[this.csidx] );
-          $prevslide.removeClass("d-none");
+          $prevslide.removeClass(this.hideclass);
         },
 
         animate_stop : function() {

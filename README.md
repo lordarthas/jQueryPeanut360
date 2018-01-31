@@ -12,6 +12,7 @@ These are the key points behind this plugin:
  - It doesn't modify the DOM
  - It doesn't care if you wrap one or more of your images in another tag (such as and <a> to view a zoom)
  - It doesn't force you to use any provided UI or button, you just use your own
+ - It doesn't even care if they are <img> tags, you can use whatever you want
  - It just needs jQuery to work
 
 ## Usage
@@ -46,6 +47,12 @@ $(function() {
     // Initialize with no params if you use "d-none" as class for hiding
     $("#demo360").peanut360();
 
+    // Initialize with params if needed
+    $("#demo360").peanut360({
+        hideclass : 'd-none',     // Change name of the class which hides elements
+        interval  : 100           // Faster or slower animation (milliseconds)
+    });
+
     // !! Bind buttons to actions //
     // Start animation
     $("#start_button").on("click", function() { $("#demo360").peanut360("animate") });
@@ -67,6 +74,7 @@ $(function() {
 
 ## ToDo
 
+ - Properly check that all images are loaded (and maybe provide the user a callback)
  - Handle mobile swipe events to turn slides
 
 ## License
