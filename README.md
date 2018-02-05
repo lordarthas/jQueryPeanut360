@@ -75,8 +75,9 @@ $(function() {
 ## ToDo
 
  - Properly check that all images are loaded (and maybe provide the user a callback)
- - Handle mobile swipe events to turn slides
-
+ - Handle mobile swipe events to turn slides (which should also handle mouse slide events)
+ - Fix "blinking" effect in Firefox which has unknown (to me) reason
+ 
 ## License
 
 MIT License
